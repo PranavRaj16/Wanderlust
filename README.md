@@ -1,3 +1,3 @@
 # wanderlust
 A fully functional website for homestays(under development)
-Link-https://wanderlust-g2id.onrender.com/listings
+Link-https://wanderlust-9hmu.onrender.com/listings
