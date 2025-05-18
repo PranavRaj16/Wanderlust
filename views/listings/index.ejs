@@ -1,27 +1,40 @@
 <% layout('/layouts/boilerplate') %>
 <body>
   <style>
-    #filter{
+    .filtertax{
       display: flex;
       flex-wrap: wrap;
-      align-items: center;
+      justify-content: space-around;
     }
+
+    #filter{
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      overflow-x:scroll;
+      max-width: 60%;
+    }
+  
     .filter{
       text-align: center;
-      margin-right: 2rem;
+      margin-right: 4rem;
       margin-top: 2rem;
       opacity: 0.7;
     }
+
     .filter p{
       font-size: 0.8rem;
     }
+
     .filter:hover{
       opacity: 1;
       cursor: pointer;
     }
+
     .tax-info{
       display: none;
     }
+
     .tax-toggle{
       border: 1px solid black;
       border-radius: 1rem;
@@ -31,52 +44,177 @@
       display: flex;
       align-items: center;
     }
+
+    .category-wrapper{
+      max-width: 60%;
+      position: relative;
+    }
+    .category-slider-wrapper {
+      position: relative;
+      padding: 10px 0;
+      overflow: hidden;
+      background-color: #fff;
+      border-bottom: 1px solid #eee;
+      max-width: 100%;
+    }
+
+    .category-slider {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding: 10px 0;
+    }
+
+    .category-slider::-webkit-scrollbar {
+      display: none;
+    }
+
+    .category-item {
+      flex: 0 0 auto;
+      width: 80px;
+      margin: 0 8px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .category-item img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .category-item span {
+      display: block;
+      margin-top: 6px;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .scroll-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.9);
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      padding: 5px 10px;
+      z-index: 10;
+      box-shadow: 0 0 4px rgba(0,0,0,0.2);
+      border-radius: 40%;
+    }
+
+    .scroll-btn.left {
+      left: -1.7rem;
+      top: 2.7rem;
+
+    }
+
+    .scroll-btn.right {
+      right: -1.7rem; 
+      top: 2.7rem;
+    }
   </style>
-  <div id="filter">
-    <div class="filter">
-      <div><i class="fa-solid fa-fire"></i></div>
-      <p>Trending</p>
+  <div class="filtertax">
+    <div class="category-wrapper">
+      <button class="scroll-btn left" onclick="scrollCategories('left')">&#10094;</button>
+      <div class="category-slider-wrapper">
+      <div class="category-slider" id="categorySlider">
+        <div class="filter category-item" id="trending">
+          <div id="trending"><i id="trending" class="fa-solid fa-fire"></i></div>
+          <p id="trending">Trending</p>
+        </div>
+        <div class="filter category-item" id="rooms">
+          <div id="rooms"><i id="rooms" class="fa-solid fa-bed"></i></div>
+          <p id="rooms" >Rooms</p>
+        </div>
+        <div class="filter category-item" id="cities">
+          <div id="cities"><i id="cities" class="fa-solid fa-mountain-city"></i></div>
+          <p id="cities">Cities</p>
+        </div>
+        <div class="filter category-item" id="mountains">
+          <div id="mountains"><i id="mountains" class="fa-solid fa-mountain"></i></div>
+          <p id="mountains">Mountains</p>
+        </div>
+        <div class="filter category-item" id="castles">
+          <div id="castles"><i id="castles" class="fa-brands fa-fort-awesome"></i></div>
+          <p id="castles">Castles</p>
+        </div>
+        <div class="filter category-item" id="pools">
+          <div id="pools"><i id="pools" class="fa-solid fa-person-swimming"></i></div>
+          <p id="pools">Pools</p>
+        </div>
+        <div class="filter category-item" id="camping">
+          <div id="camping"><i id="camping" class="fa-solid fa-campground"></i></div>
+          <p id="camping">Camping</p>
+        </div>
+        <div class="filter category-item" id="farms">
+          <div id="farms"><i id="farms" class="fa-solid fa-cow"></i></div>
+          <p id="farms">Farms</p>
+        </div>
+        <div class="filter category-item" id="artic">
+          <div id="artic"><i id="artic" class="fa-solid fa-snowflake"></i></div>
+          <p id="artic">Arctic</p>
+        </div>
+        <div class="filter category-item" id="domes">
+          <div id="domes"><i id="domes" class="fa-solid fa-igloo"></i></div>
+          <p id="domes">Domes</p>
+        </div>
+        <div class="filter category-item" id="boats">
+          <div id="boats"><i id="boats" class="fa-solid fa-sailboat"></i></div>
+          <p id="boats">Boats</p>
+        </div>
+      </div>  
     </div>
-    <div class="filter">
-      <div><i class="fa-solid fa-bed"></i></div>
-      <p>Rooms</p>
+    <button class="scroll-btn right" onclick="scrollCategories('right')">&#10095;</button>
     </div>
-    <div class="filter">
-      <div><i class="fa-solid fa-mountain-city"></i></div>
-      <p>Iconic Cities</p>
-    </div>
-    <div class="filter">
-      <div><i class="fa-solid fa-mountain"></i></div>
-      <p>Mountains</p>
-    </div>
-    <div class="filter">
-      <div><i class="fa-brands fa-fort-awesome"></i></div>
-      <p>Castles</p>
-    </div>
-    <div class="filter">
-      <div><i class="fa-solid fa-person-swimming"></i></div>
-      <p>Amazing Pools</p>
-    </div>
-    <div class="filter">
-      <div><i class="fa-solid fa-campground"></i></div>
-      <p>Camping</p>
-    </div>
-    <div class="filter">
-      <div><i class="fa-solid fa-cow"></i></div>
-      <p>Farms</p>
-    </div>
-    <div class="filter">
-      <div><i class="fa-solid fa-snowflake"></i></div>
-      <p>Arctic</p>
-    </div>
-    <div class="filter">
-      <div><i class="fa-solid fa-igloo"></i></div>
-      <p>Domes</p>
-    </div>
-    <div class="filter">
-      <div><i class="fa-solid fa-sailboat"></i></div>
-      <p>Boats</p>
-    </div>
+    <!-- <div id="filter">
+      <div class="filter" id="trending">
+        <div id="trending"><i id="trending" class="fa-solid fa-fire"></i></div>
+        <p id="trending">Trending</p>
+      </div>
+      <div class="filter" id="rooms">
+        <div id="rooms"><i id="rooms" class="fa-solid fa-bed"></i></div>
+        <p id="rooms" >Rooms</p>
+      </div>
+      <div class="filter" id="cities">
+        <div id="cities"><i id="cities" class="fa-solid fa-mountain-city"></i></div>
+        <p id="cities">Cities</p>
+      </div>
+      <div class="filter" id="mountains">
+        <div id="mountains"><i id="mountains" class="fa-solid fa-mountain"></i></div>
+        <p id="mountains">Mountains</p>
+      </div>
+      <div class="filter" id="castles">
+        <div id="castles"><i id="castles" class="fa-brands fa-fort-awesome"></i></div>
+        <p id="castles">Castles</p>
+      </div>
+      <div class="filter" id="pools">
+        <div id="pools"><i id="pools" class="fa-solid fa-person-swimming"></i></div>
+        <p id="pools">Pools</p>
+      </div>
+      <div class="filter" id="camping">
+        <div id="camping"><i id="camping" class="fa-solid fa-campground"></i></div>
+        <p id="camping">Camping</p>
+      </div>
+      <div class="filter" id="farms">
+        <div id="farms"><i id="farms" class="fa-solid fa-cow"></i></div>
+        <p id="farms">Farms</p>
+      </div>
+      <div class="filter" id="artic">
+        <div id="artic"><i id="artic" class="fa-solid fa-snowflake"></i></div>
+        <p id="artic">Arctic</p>
+      </div>
+      <div class="filter" id="domes">
+        <div id="domes"><i id="domes" class="fa-solid fa-igloo"></i></div>
+        <p id="domes">Domes</p>
+      </div>
+      <div class="filter" id="boats">
+        <div id="boats"><i id="boats" class="fa-solid fa-sailboat"></i></div>
+        <p id="boats">Boats</p>
+      </div>
+    </div> -->
     <div class="tax-toggle">
       <div class="form-check-reverse form-switch">
         <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
@@ -121,4 +259,24 @@
       }
     }
   })
+  let filter= document.querySelectorAll( ".filter");
+  console.log(filter);
+  filter.forEach((ele)=>{
+    ele.addEventListener("click", async (event)=>{
+    let category=event.target.getAttribute("id");
+    window.location.href = `/listings?category=${category}`;
+  })
+  })
+</script>
+<script>
+  function scrollCategories(direction) {
+    const container = document.getElementById('categorySlider');
+    const scrollAmount = 500;
+
+    if (direction === 'left') {
+      container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    } else {
+      container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  }
 </script>
