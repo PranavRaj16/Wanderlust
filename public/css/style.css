@@ -108,3 +108,10 @@ body{
     height: 400px;
     width: 80vh;
 }
+
+@media(max-width:768px){
+    .show{
+        width:100% !important;
+        margin-left: 0px !important; 
+    }
+}
