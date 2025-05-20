@@ -115,6 +115,15 @@
       right: -1.7rem; 
       top: 2.7rem;
     }
+
+    @media(max-width:768px){
+      .category-wrapper{
+        max-width:90%;
+      }
+      .tax-toggle{
+        display:none;
+      }
+  }
   </style>
   <div class="filtertax">
     <div class="category-wrapper">
@@ -169,52 +178,6 @@
     </div>
     <button class="scroll-btn right" onclick="scrollCategories('right')">&#10095;</button>
     </div>
-    <!-- <div id="filter">
-      <div class="filter" id="trending">
-        <div id="trending"><i id="trending" class="fa-solid fa-fire"></i></div>
-        <p id="trending">Trending</p>
-      </div>
-      <div class="filter" id="rooms">
-        <div id="rooms"><i id="rooms" class="fa-solid fa-bed"></i></div>
-        <p id="rooms" >Rooms</p>
-      </div>
-      <div class="filter" id="cities">
-        <div id="cities"><i id="cities" class="fa-solid fa-mountain-city"></i></div>
-        <p id="cities">Cities</p>
-      </div>
-      <div class="filter" id="mountains">
-        <div id="mountains"><i id="mountains" class="fa-solid fa-mountain"></i></div>
-        <p id="mountains">Mountains</p>
-      </div>
-      <div class="filter" id="castles">
-        <div id="castles"><i id="castles" class="fa-brands fa-fort-awesome"></i></div>
-        <p id="castles">Castles</p>
-      </div>
-      <div class="filter" id="pools">
-        <div id="pools"><i id="pools" class="fa-solid fa-person-swimming"></i></div>
-        <p id="pools">Pools</p>
-      </div>
-      <div class="filter" id="camping">
-        <div id="camping"><i id="camping" class="fa-solid fa-campground"></i></div>
-        <p id="camping">Camping</p>
-      </div>
-      <div class="filter" id="farms">
-        <div id="farms"><i id="farms" class="fa-solid fa-cow"></i></div>
-        <p id="farms">Farms</p>
-      </div>
-      <div class="filter" id="artic">
-        <div id="artic"><i id="artic" class="fa-solid fa-snowflake"></i></div>
-        <p id="artic">Arctic</p>
-      </div>
-      <div class="filter" id="domes">
-        <div id="domes"><i id="domes" class="fa-solid fa-igloo"></i></div>
-        <p id="domes">Domes</p>
-      </div>
-      <div class="filter" id="boats">
-        <div id="boats"><i id="boats" class="fa-solid fa-sailboat"></i></div>
-        <p id="boats">Boats</p>
-      </div>
-    </div> -->
     <div class="tax-toggle">
       <div class="form-check-reverse form-switch">
         <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
