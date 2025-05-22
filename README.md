@@ -71,12 +71,12 @@
    Create a .env file in the root directory and add the following:
 
    ```env
-   CLOUDINARY_CLOUD_NAME=your_cloud_name
-   CLOUDINARY_API_KEY=your_api_key
-   CLOUDINARY_API_SECRET=your_api_secret
-   MAPBOX_TOKEN=your_mapbox_token
-   MONGODB_URI=your_mongodb_connection_string
-   SESSION_SECRET=your_session_secret
+   CLOUD_NAME=your_cloud_name
+   CLOUD_API_KEY=your_api_key
+   CLOUD_API_SECRET=your_api_secret
+   MAP_TOKEN=your_mapbox_token
+   ATLASDB_URL=your_mongodb_connection_string
+   SECRET=your_session_secret
 
    ```
 
