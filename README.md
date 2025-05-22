@@ -1,4 +1,4 @@
-# 🧳 Wanderlust
+# 🧭 Wanderlust
 
 **Wanderlust** is a full-stack web application that enables users to list, discover, and book homestays across various destinations. Inspired by Airbnb, it offers a seamless experience for both hosts and travelers, featuring interactive maps, category filters, user reviews, and secure authentication mechanisms.
 
@@ -53,3 +53,50 @@
    ```bash
    git clone https://github.com/yourusername/wanderlust.git
    cd wanderlust
+
+2. **Install Dependencies**:
+   ```bash
+   npm install
+
+3. **Configure environmental variables**:
+   Create a .env file in the root directory and add the following:
+   ```env
+   CLOUDINARY_CLOUD_NAME=your_cloud_name
+   CLOUDINARY_API_KEY=your_api_key
+   CLOUDINARY_API_SECRET=your_api_secret
+   MAPBOX_TOKEN=your_mapbox_token
+   MONGODB_URI=your_mongodb_connection_string
+   SESSION_SECRET=your_session_secret
+
+4. **Start application**:
+   ```bash
+   npm start
+
+5. **Access the application**:
+   Open your browser and navigate to http://localhost:8080/listings
+
+## 📁Project Structure
+
+## 🌐 Deployment
+
+For deploying Wanderlust to a production environment:
+1. **Choose a hosting platform**: Platforms like Render, Heroku, or Vercel are suitable.
+2. **Set environment variables**: Configure the necessary environment variables on your hosting platform.
+3.**Database**: Ensure your MongoDB Atlas cluster is accessible from your hosting platform.
+4.**Domain**: Set up a custom domain if desired.
+
+## 🛡️ Security Considerations
+
+- **Environment Variables**: Never commit your .env file to version control. Use .gitignore to exclude it.
+- **Input Validation**: All user inputs are validated using Joi to prevent malicious data.
+- **Authentication**: Sessions are managed securely, and sensitive routes are protected to ensure only authorized access.
+
+## 🤝 Contributing
+
+Contributions are welcome! Please fork the repository and submit a pull request for any enhancements or bug fixes.
+
+## 📬 Contact
+
+For any inquiries or feedback:
+Email: k.pranavraj123@gmail.com
+LinkedIn: Pranav Raj Katikala
