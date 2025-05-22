@@ -77,6 +77,21 @@
 
 ## 📁Project Structure
 
+1. **Follows the project structure**:
+   ```bash
+   ├── app.js                 # Main application file
+   ├── models/                # Mongoose schemas (User, Listing, Review)
+   ├── routes/                # Express route handlers
+   ├── controllers/           # Business logic for routes
+   ├── views/                 # EJS templates
+   ├── public/                # Static assets (CSS, JS, images)
+   ├── middleware/            # Custom middleware functions
+   ├── utils/                 # Utility functions
+   ├── config/                # Configuration files (e.g., Cloudinary)
+   ├── .env                   # Environment variables
+   └── package.json           # Project metadata and dependencies
+
+
 ## 🌐 Deployment
 
 For deploying Wanderlust to a production environment:
