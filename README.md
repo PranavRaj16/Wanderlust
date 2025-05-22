@@ -77,7 +77,7 @@
 
 ## 📁Project Structure
 
-1. **Follows the project structure**:
+- **Follows the project structure**:
    ```bash
    ├── app.js                 # Main application file
    ├── models/                # Mongoose schemas (User, Listing, Review)
