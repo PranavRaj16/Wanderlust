@@ -1,4 +1,4 @@
-Wanderlust
+#Wanderlust
 Wanderlust is a full-stack web application that enables users to list, discover, and book homestays across various destinations. Inspired by Airbnb, it offers a seamless experience for both hosts and travelers, featuring interactive maps, category filters, user reviews, and secure authentication mechanisms.
 
 🔧 Tech Stack
