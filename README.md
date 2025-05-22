@@ -113,5 +113,5 @@ Contributions are welcome! Please fork the repository and submit a pull request 
 ## 📬 Contact
 
 For any inquiries or feedback:
-Email: k.pranavraj123@gmail.com
-LinkedIn: Pranav Raj Katikala
+- Email: k.pranavraj123@gmail.com
+- LinkedIn: Pranav Raj Katikala
