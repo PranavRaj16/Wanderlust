@@ -6,21 +6,21 @@ const geocodingClient = mbxGeocoding({ accessToken: mapToken });
 
 module.exports.index = async (req, res) => {
   let query = req.query;
-  if(query.title){
-    const allListings = await Listing.find({title: {$regex: query.title, $options: 'i'}});
+  if (query.title) {
+    const allListings = await Listing.find({
+      title: { $regex: query.title, $options: "i" },
+    });
     if (!allListings.length) {
-      console.log(allListings,"reo");
-    req.flash("error", "No Results Found");
-    res.redirect("/listings");
-  }
+      req.flash("error", "No Results Found");
+      return res.redirect("/listings");
+    }
     res.render("listings/index.ejs", { allListings });
-  }
-  else{
+  } else {
     const allListings = await Listing.find(query);
     if (!allListings.length) {
-    req.flash("error", "No Results Found");
-    res.redirect("/listings");
-  }
+      req.flash("error", "No Results Found");
+      return res.redirect("/listings");
+    }
     res.render("listings/index.ejs", { allListings });
   }
 };
